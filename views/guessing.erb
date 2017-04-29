@@ -1,0 +1,17 @@
+<audio controls:none autoplay loop>
+  <source src="https://s3.amazonaws.com/Syntaxxx/bigger-picture.mp3" type="audio/mpeg">
+ </audio>
+
+
+<center><font color = ultra><font size = 8><h2><%= p2_name%> Start guessing the letters. <h2></center>
+<center><font size = 6><font color = lime green><%=blank%>
+<form method="post" action="guess">
+<%=message%>
+<p><center><input type="text" name="letter"</p>
+
+
+<input type="hidden" name="player1" value='<%=p1_name%>'>
+<input type="hidden" name="player2" value='<%=p2_name%>'>
+<p><center><input type="submit" value="Enter Guess"/></p>
+<h2><center><font color = #42f4eb>guesses - <%=array%></center></h2>
+</form>
