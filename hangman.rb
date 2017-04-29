@@ -31,7 +31,6 @@ class Hangman
 		p letter
 			if letter == guessletter
 				correct_blank[index_position] =guessletter
-				# p correct_blank
 			end
 	    end
 	end

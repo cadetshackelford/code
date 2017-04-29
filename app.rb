@@ -45,7 +45,7 @@ end
 	end
 end
  get "/lose" do
- 	player1 = params[:player1] 
+ 	player1 = params[:player1]
 	player2 = params[:player2]
  	erb :lose, locals: {p1_name: player1, p2_name: player2, word: session[:game].name}
  	
