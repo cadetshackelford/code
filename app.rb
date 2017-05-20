@@ -2,7 +2,18 @@ require 'sinatra'
 require_relative "hangman.rb"
 	enable :sessions
 	get '/' do
+	erb :playernum
+end
+post '/numplayers' do
+  playerchoice = params[:playerchoice]
+ if playerchoice == 'Single'
+ 	dictionary = File.readlines("word.txt").map(&:chomp)
+	password = dictionary.sample
+	session[:game] = Hangman.new(password)
+	redirect '/guessing'
+elsif playerchoice == "2_Player"
 	erb :index
+end
 end
 	post '/user_names' do
 	player1 = params[:user_1]

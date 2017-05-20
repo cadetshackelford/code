@@ -1,6 +1,6 @@
 		body {
-			background-color: red;
-			transition: background-color 9s;
+			background-color: green;
+			transition: background-color 2s; 
 		}
 
 
