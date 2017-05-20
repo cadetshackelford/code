@@ -6,7 +6,7 @@ class Hangman
 		@name = password_name.upcase
 		@guessed = []
 		@correct_blank = blank()
-		@counter= 8
+		@counter= 6
 	end
 
 
@@ -45,10 +45,17 @@ class Hangman
 		if correct_letter?(choice) == true
 			correct_index(choice)
 		else
-			@counter -=1
+			@counter -= 1
 		end
 	end
 	def lose 
-		counter==0 
+		counter == 0 
+	end
+	def winner
+		if correct_blank.include?("_")
+			false 
+		else
+			true 
+		end
 	end
 end

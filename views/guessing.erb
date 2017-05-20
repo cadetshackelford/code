@@ -1,13 +1,14 @@
+<link rel="stylesheet" type="text/css" href="/css/guessing_background.css">
 <audio controls:none autoplay loop>
-  <source src="https://www.youtube.com/watch?v=0tn5g2pF5PU" type="audio/mpeg">
+  <source src="https://s3.amazonaws.com/Syntaxxx/bigger-picture.mp3" type="audio/mpeg">
  </audio>
 
 
 <center><font color = ultra><font size = 8><h2><%= p2_name%> Start guessing the letters. <h2></center>
-<center><font size = 6><font color = lime green><%=blank%>
+<center><font size = 6><font color = lime green><%=blank.join(" ")%>
 <form method="post" action="guess">
 <%=message%>
-<p><center><input type="text" name="letter"</p>
+<p><center><input type="text" name="letter"autofocus></p>
 
 
 <input type="hidden" name="player1" value='<%=p1_name%>'>
@@ -15,4 +16,16 @@
 <p><center><input type="submit" value="Enter Guess"/></p>
 <h2><center><font color = #42f4eb>guesses - <%=array%></center></h2>
 </form>
-<!-- https://s3.amazonaws.com/Syntaxxx/bigger-picture.mp3 -->
+	<script type="text/javascript">
+		var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet","tan","black","pink"];
+
+		var i = 1;
+
+		window.setInterval(function(){
+			document.body.style.backgroundColor = colors[i];
+			i++;
+			if (i === colors.length){
+				i=0;
+			}
+		}, 5000);
+	</script>

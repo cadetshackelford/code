@@ -13,7 +13,6 @@ end
 	get '/password' do
 	player1 = params[:player1]
 	player2 = params[:player2]
-	# "Player 1 is #{player1} and Player 2 is #{player2}!"
 	erb :password, locals: {p1_name: player1, p2_name: player2}
 end
 	post '/secretword' do
@@ -36,17 +35,28 @@ end
 	if session[:game].already_guessed(choice) == true
 		session[:game].make_move(choice)
 		session[:game].update_guessed(choice)
-		if session[:game].lose==true
+		
+		if 
+		 session[:game].winner
+		 redirect '/winner'
+		elsif
+		 	 session[:game].lose == true
 			redirect '/lose'
 		end
-	redirect "/guessing"
+		redirect '/guessing'
 	else
+
 		erb :guessing, locals: {p1_name: player1, p2_name: player2, blank: session[:game].correct_blank, array: session[:game].guessed,message: "thats already been picked"}
 	end
 end
  get "/lose" do
  	player1 = params[:player1]
 	player2 = params[:player2]
- 	erb :lose, locals: {p1_name: player1, p2_name: player2, word: session[:game].name}
+ 	erb :lose, locals: {p1_name: player1, p2_name: player2, word: session[:game].name,counter:session[:game].counter}
  	
+ end
+ get "/winner" do
+ 	player1 = params[:player1]
+	player2 = params[:player2]
+ 	erb :winner, locals: {p1_name: player1, p2_name: player2, word: session[:game].name,counter:session[:game].counter}
  end
