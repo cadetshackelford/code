@@ -1,31 +1,31 @@
-<link rel="stylesheet" type="text/css" href="/css/guessing_background.css">
+<link rel="stylesheet" type="text/css" href="/css/gstyle.css">
 <audio controls:none autoplay loop>
   <source src="https://s3.amazonaws.com/Syntaxxx/bigger-picture.mp3" type="audio/mpeg">
  </audio>
 
 
-<center><font color = ultra><font size = 8><h2><%= p2_name%> Start guessing the letters. <h2></center>
+<center><font color = ultra><font size = 8><h2><%= p2_name%> Start guessing the letters. </h2></font></font></center>
 <center><font size = 6><font color = lime green><%=blank.join(" ")%>
 <form method="post" action="guess">
 <%=message%>
-<p><center><input type="text" name="letter"autofocus></p>
+    <p><center><input type="text" name="letter"autofocus></center></p>
 
 
 <input type="hidden" name="player1" value='<%=p1_name%>'>
 <input type="hidden" name="player2" value='<%=p2_name%>'>
-<p><center><input type="submit" value="Enter Guess"/></p>
-<h2><center><font color = #42f4eb>guesses - <%=array%></center></h2>
+    <p><center><input type="submit" value="Enter Guess"/></center></p>
+    <h2><center><font color = #42f4eb>guesses - <%=array%></font></center></h2>
 </form>
-	<script type="text/javascript">
-		var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet","tan","black","pink"];
+    <script type="text/javascript">
+        var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet","tan","black","pink"];
 
-		var i = 1;
+        var i = 1;
 
-		window.setInterval(function(){
-			document.body.style.backgroundColor = colors[i];
-			i++;
-			if (i === colors.length){
-				i=0;
-			}
-		}, 5000);
-	</script>
+        window.setInterval(function(){
+            document.body.style.backgroundColor = colors[i];
+            i++;
+            if (i === colors.length){
+                i=0;
+            }
+        }, 5000);
+    </script>
