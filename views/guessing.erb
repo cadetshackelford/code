@@ -8,15 +8,28 @@
 <center><font size = 6><font color = lime green><%=blank.join(" ")%>
 <form method="post" action="guess">
 <%=message%>
-    <p><center><input type="text" name="letter"autofocus></center></p>
+    <p><center><input onkeyup="this.value = this.value.replace(/[^a-zA-Z]/, '')"  type="text" maxlengh="1"name="letter"autofocus></center></p>
 
 
 <input type="hidden" name="player1" value='<%=p1_name%>'>
 <input type="hidden" name="player2" value='<%=p2_name%>'>
-    <p><center><input type="submit" value="Enter Guess"/></center></p>
-    <h2><center><font color = #42f4eb>guesses - <%=array%></font></center></h2>
+    <p>
+        <center>
+            <input 
+            onkeyup="this.value = this.value.replace(/[^a-zA-Z]/, '')" 
+            type="submit" value="Enter Guess"/>
+        </center>
+    </p>
+    <h2>
+        <center>
+            <font 
+                color = #42f4eb>guesses - <%=array%>
+            </font>
+        </center>
+    </h2>
 </form>
-    <script type="text/javascript">
+    <script
+         type="text/javascript">
         var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet","tan","black","pink"];
 
         var i = 1;
